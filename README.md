@@ -55,17 +55,27 @@
 
 ## Features
 
-- Modular architecture with proper separation of concerns
-- Global exception handling and request/response transformation
-- Database integration with Prisma ORM
-- Structured logging
-- API documentation with Swagger
-- Configuration management with validation
-- Authentication and authorization with multiple OAuth providers (Google, GitHub, Facebook, Twitter, Microsoft, Discord, Apple)
-- Unit and e2e testing setup
-- Performance optimized with Fastify and SWC
-- Git hooks with Husky and [conventional commits](./COMMIT_CONVENTION.md)
-- Unified cloud storage interface with multiple provider support
+- **Architecture**: Modular architecture with proper separation of concerns
+- **Configuration**: Environment management with [@nestjs/config](https://docs.nestjs.com/techniques/configuration) and [Joi](https://joi.dev/) validation
+- **Exception Handling**: Global exception handling and request/response transformation
+- **Database**: [MongoDB](https://www.mongodb.com/) integration with [Prisma ORM](https://www.prisma.io/), migrations, and data seeding
+- **Caching**: [Redis](https://redis.io/) integration with [@nestjs/cache-manager](https://docs.nestjs.com/techniques/caching) and [ioredis](https://github.com/redis/ioredis)
+- **Logging**: Structured logging with [Pino](https://getpino.io/) and [pino-datadog-transport](https://github.com/wdalmut/pino-datadog)
+- **Documentation**: API documentation with Swagger ([@nestjs/swagger](https://docs.nestjs.com/openapi/introduction))
+- **Authentication**: 
+  - Email sign-in/sign-up with [JWT](https://jwt.io/) and [Passport](https://www.passportjs.org/)
+  - Social authentication with multiple providers (Google, GitHub, Facebook, Twitter, Microsoft, LinkedIn, GitLab, Discord, Apple, Stack)
+  - [BetterAuth](https://github.com/betterstack-community/better-auth) integration for enhanced security
+- **Authorization**: Role-based access control with Admin and User base roles
+- **Storage**: Unified cloud storage interface with multiple provider support ([AWS S3](https://aws.amazon.com/s3/), [Alibaba OSS](https://www.alibabacloud.com/product/object-storage-service), [Tencent COS](https://www.tencentcloud.com/products/cos))
+- **Email**: Templated email sending with [Nodemailer](https://nodemailer.com/) and [MJML](https://mjml.io/)
+- **Internationalization**: Multi-language support using [nestjs-i18n](https://nestjs-i18n.com/)
+- **Payments**: [Stripe](https://stripe.com/) integration for payment processing
+- **Testing**: Comprehensive unit and E2E testing setup with [Jest](https://jestjs.io/)
+- **CI/CD**: Continuous integration with [GitHub Actions](https://github.com/features/actions) (with multi-platform support)
+- **Performance**: Optimized with [Fastify](https://www.fastify.io/) and [SWC](https://swc.rs/)
+- **Development**: Git hooks with [Husky](https://typicode.github.io/husky/) and [conventional commits](./COMMIT_CONVENTION.md)
+- **Containerization**: [Docker](https://www.docker.com/) support for development and production
 
 ## Getting Started
 
