@@ -19,7 +19,7 @@ export class TencentCosStorageProvider implements StorageProvider {
   constructor(private configService: ConfigService) {
     const storageConfig = this.configService.getStorageConfig();
 
-    this.cosClient = new COS({
+    this.cosClient = new COS.default({
       SecretId: storageConfig.accessKeyId,
       SecretKey: storageConfig.accessKeySecret,
     });

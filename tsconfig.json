@@ -17,6 +17,9 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "paths": {
       "@app/*": ["src/*"],
       "@config/*": ["src/config/*"],
@@ -24,5 +27,11 @@
       "@shared/*": ["src/shared/*"],
       "@core/*": ["src/core/*"]
     }
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "**/*.spec.ts"
+  ]
 } 
