@@ -60,7 +60,7 @@
     "class-validator": "^0.14.1",
     "cos-nodejs-sdk-v5": "^2.14.7",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.0.0",
     "fastify": "^5.2.2",
     "fastify-multer": "^2.0.3",
     "joi": "^17.13.3",
