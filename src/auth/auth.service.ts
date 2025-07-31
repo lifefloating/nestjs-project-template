@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 
 import { AuthInstanceInjectKey } from './auth.constant';
-import { InjectAuthInstance } from './auth.interface';
+import type { InjectAuthInstance } from './auth.interface';
 
 @Injectable()
 export class AuthService {

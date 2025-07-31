@@ -12,7 +12,7 @@ import {
 import { ApiTags, ApiOperation, ApiConsumes, ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { StorageService } from '../services/storage.service';
 import { FileUploadResultDto } from '../dto/file-upload.dto';
-import { FastifyRequest } from 'fastify';
+import type { FastifyRequest } from 'fastify';
 
 @ApiTags('storage')
 @Controller('storage')

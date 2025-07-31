@@ -4,8 +4,7 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "builder": "swc",
-    "typeCheck": true,
+    "builder": "tsc",
     "assets": [
       { "include": "i18n/**/*", "watchAssets": true },
       { "include": "**/*.proto", "watchAssets": true },

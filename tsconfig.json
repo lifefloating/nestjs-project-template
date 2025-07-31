@@ -20,6 +20,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "types": [
+      "bun-types"
+    ],
     "paths": {
       "@app/*": ["src/*"],
       "@config/*": ["src/config/*"],

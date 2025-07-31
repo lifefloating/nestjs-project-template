@@ -10,7 +10,7 @@ import {
   AUTH_ALLOWED_METHODS,
 } from './auth.constant';
 import { CreateAuth } from './auth.implement';
-import { InjectAuthInstance } from './auth.interface';
+import type { InjectAuthInstance } from './auth.interface';
 import { ConfigService } from '@app/config/config.service';
 import { PrismaService } from '@app/prisma/prisma.service';
 
