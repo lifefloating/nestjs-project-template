@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 import { PrismaService } from '../prisma/prisma.service';
 import { ConfigService } from '../config/config.service';
 
@@ -7,7 +7,7 @@ import {
   AUTH_JS_SESSION_COLLECTION,
   AUTH_JS_USER_COLLECTION,
 } from './auth.constant';
-import { APIError, betterAuth, BetterAuthOptions, BetterAuthPlugin } from 'better-auth';
+import { BetterAuthError, betterAuth, BetterAuthOptions, BetterAuthPlugin } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { toNodeHandler } from 'better-auth/node';
 import { createAuthMiddleware } from 'better-auth/api';
@@ -166,7 +166,7 @@ export function CreateAuth(
     } catch (error) {
       console.error(error);
       // throw error
-      return res.status(500).send((error as any).message);
+      return res.code(500).send((error as any).message);
     }
   };
 
@@ -186,7 +186,7 @@ export function CreateAuth(
             const result = await auth.api.listUserAccounts(params);
             return result;
           } catch (error) {
-            if (error instanceof APIError) {
+            if (error instanceof BetterAuthError) {
               return null;
             }
             throw error;

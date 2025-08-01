@@ -1,0 +1,13 @@
+[test]
+# Bun test configuration
+preload = ["./preload.ts"]
+
+[install]
+# Install configuration
+cache = true
+lockfile = true
+
+[build]
+# Build configuration
+minify = false
+sourcemap = "external" 

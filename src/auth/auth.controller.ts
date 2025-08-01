@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Inject, Post, Query } from '@nestjs/common';
 
 import { AuthInstanceInjectKey } from './auth.constant';
-import { InjectAuthInstance } from './auth.interface';
+import type { InjectAuthInstance } from './auth.interface';
 import { AuthService } from './auth.service';
 
 @Controller('/better-auth')
