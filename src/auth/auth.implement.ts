@@ -15,11 +15,23 @@ import { createAuthMiddleware } from 'better-auth/api';
 export type AuthRequest = FastifyRequest & { originalUrl?: string; url?: string };
 export type AuthResponse = FastifyReply;
 
+export interface CreateAuthReturn {
+  handler: (req: AuthRequest, res: AuthResponse) => Promise<any>;
+  auth: {
+    options: BetterAuthOptions;
+    api: {
+      getSession: (params: any) => Promise<any>;
+      getProviders: () => string[];
+      listUserAccounts: (params: any) => Promise<any>;
+    };
+  };
+}
+
 export function CreateAuth(
   providers: BetterAuthOptions['socialProviders'],
   prismaService: PrismaService,
   configService: ConfigService,
-) {
+): CreateAuthReturn {
   const appConfig = configService.getAppConfig();
   const authConfig = configService.getAuthConfig();
   const corsConfig = configService.getCorsConfig();
