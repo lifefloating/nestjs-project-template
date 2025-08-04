@@ -4,12 +4,12 @@
   <a href="https://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-<p align="center">A modern NestJS project structure with best practices using Fastify, Prisma, MongoDB, and SWC. and more</p>
+<p align="center">A modern NestJS project structure with best practices using Fastify, Prisma, MongoDB, and Bun runtime. and more</p>
 
 <p align="center">
   <a href="https://github.com/nestjs/nest" target="_blank"><img src="https://img.shields.io/github/license/nestjs/nest.svg" alt="Package License" /></a>
-  <a href="https://nodejs.org/" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%2020.0.0-green.svg" alt="Node Version" /></a>
-  <a href="https://pnpm.io/" target="_blank"><img src="https://img.shields.io/badge/pnpm-%3E%3D%208.0.0-blue.svg" alt="Pnpm Version" /></a>
+  <a href="https://github.com/lifefloating/nestjs-project-template/tree/node-main" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%2020.0.0%20(node--main%20branch)-green.svg" alt="Node Version (node-main branch)" /></a>
+  <a href="https://bun.sh/" target="_blank"><img src="https://img.shields.io/badge/bun-%3E%3D%201.0.0-FBF0DF?style=flat&logo=bun&logoColor=black" alt="Bun Runtime" /></a>
   <a href="https://www.mongodb.com/" target="_blank"><img src="https://img.shields.io/badge/database-MongoDB-green.svg" alt="Database" /></a>
 </p>
 
@@ -20,6 +20,7 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Bun-Runtime-FBF0DF?style=flat-square&logo=bun&logoColor=black" alt="Bun Runtime" />
   <img src="https://img.shields.io/badge/Prisma-3982CE?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
   <img src="https://img.shields.io/badge/Better--Auth-6366F1?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSIxMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjExIiByeD0iMiIgcnk9IjIiPjwvcmVjdD48cGF0aCBkPSJNNyA5VjdhNiA2IDAgMCAxIDEyIDBWOSI+PC9wYXRoPjwvc3ZnPg==&logoColor=white" alt="Better Auth" />
   <img src="https://img.shields.io/badge/Pino-Logger-11C877?style=flat-square&logo=pino&logoColor=white" alt="Pino" />
@@ -41,15 +42,16 @@
 
 ## 📋 Tech Stack
 
+- **Runtime**: [Bun](https://bun.sh/) for JavaScript & TypeScript
 - **Framework**: [NestJS 10.x](https://nestjs.com/) with [Fastify](https://www.fastify.io/)
 - **Database**: [MongoDB](https://www.mongodb.com/) with [Prisma ORM](https://www.prisma.io/)
-- **Compiler**: [SWC](https://swc.rs/) for TypeScript
-- **Package Manager**: [pnpm](https://pnpm.io/)
+- ~~**Compiler**: [SWC](https://swc.rs/) for TypeScript~~ (Built into Bun)
+- ~~**Package Manager**: [pnpm](https://pnpm.io/)~~ → **Package Manager**: Built-in Bun package manager
 - **Authentication**: JWT with [Passport](https://www.passportjs.org/)
 - **Documentation**: [Swagger/OpenAPI](https://swagger.io/)
 - **Validation**: [class-validator](https://github.com/typestack/class-validator) with DTOs
 - **Logging**: [Pino](https://getpino.io/) for structured logging
-- **Testing**: [Jest](https://jestjs.io/)
+- ~~**Testing**: [Jest](https://jestjs.io/)~~ → **Testing**: Built-in Bun test runner
 - **Linting**: [ESLint](https://eslint.org/) with TypeScript rules (inspired by [brocoders/nestjs-boilerplate](https://github.com/brocoders/nestjs-boilerplate))
 - **Storage**: Multi-cloud storage support ([Alibaba Cloud OSS](https://www.alibabacloud.com/product/object-storage-service), [Tencent Cloud COS](https://www.tencentcloud.com/products/cos), [Amazon S3](https://aws.amazon.com/s3/))
 
@@ -71,9 +73,9 @@
 - **Email**: Templated email sending with [Nodemailer](https://nodemailer.com/) and [MJML](https://mjml.io/)
 - **Internationalization**: Multi-language support using [nestjs-i18n](https://nestjs-i18n.com/)
 - **Payments**: [Stripe](https://stripe.com/) integration for payment processing
-- **Testing**: Comprehensive unit and E2E testing setup with [Jest](https://jestjs.io/)
+- **Testing**: Comprehensive unit and E2E testing setup with [Bun](https://bun.sh/docs/cli/test) test runner
 - **CI/CD**: Continuous integration with [GitHub Actions](https://github.com/features/actions) (with multi-platform support)
-- **Performance**: Optimized with [Fastify](https://www.fastify.io/) and [SWC](https://swc.rs/)
+- **Performance**: Optimized with [Fastify](https://www.fastify.io/) and [Bun](https://bun.sh/) runtime
 - **Development**: Git hooks with [Husky](https://typicode.github.io/husky/) and [conventional commits](./COMMIT_CONVENTION.md)
 - **Containerization**: [Docker](https://www.docker.com/) support for development and production
 

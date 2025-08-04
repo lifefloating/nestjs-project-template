@@ -2,9 +2,10 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) v20 or higher
-- [pnpm](https://pnpm.io/) v8 or higher
+- [Bun](https://bun.sh/) v1.0 or higher
 - [MongoDB](https://www.mongodb.com/) server
+
+> **Note:** For Node.js version (v20+) with pnpm (v8+), please check the [node-main branch](https://github.com/lifefloating/nestjs-project-template/tree/node-main)
 
 ## Installation
 
@@ -12,7 +13,7 @@
 2. Install dependencies:
 
 ```bash
-pnpm install
+bun install
 ```
 
 3. Set up environment variables:
@@ -25,13 +26,13 @@ cp .env.sample .env
 4. Generate Prisma client:
 
 ```bash
-pnpm prisma:generate
+bun prisma:generate
 ```
 
 5. Seed the database (optional):
 
 ```bash
-pnpm db:seed
+bun db:seed
 ```
 
 ## Running the Application
@@ -39,14 +40,14 @@ pnpm db:seed
 Development mode:
 
 ```bash
-pnpm start:dev
+bun start:dev
 ```
 
 Production mode:
 
 ```bash
-pnpm build
-pnpm start:prod
+bun build
+bun start:prod
 ```
 
 ## Code Quality
@@ -55,10 +56,10 @@ pnpm start:prod
 
 ```bash
 # Check for ESLint errors
-pnpm lint:check
+bun lint
 
 # Fix ESLint errors automatically
-pnpm lint
+bun lint:fix
 ```
 
 > **Note:** ESLint configuration is inspired by [brocoders/nestjs-boilerplate](https://github.com/brocoders/nestjs-boilerplate)
@@ -66,7 +67,7 @@ pnpm lint
 ### Formatting code:
 
 ```bash
-pnpm format
+bun format
 ```
 
 ## Testing
@@ -74,13 +75,19 @@ pnpm format
 Running unit tests:
 
 ```bash
-pnpm test
+bun test
 ```
 
-Running e2e tests:
+Running tests with coverage:
 
 ```bash
-pnpm test:e2e
+bun test:cov
+```
+
+Running tests in watch mode:
+
+```bash
+bun test:watch
 ```
 
 ## API Documentation
