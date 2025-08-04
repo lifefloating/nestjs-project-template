@@ -2,7 +2,9 @@
   "$schema": "https://json.schemastore.org/swcrc",
   "sourceMaps": true,
   "module": {
-    "type": "commonjs"
+    "type": "es6",
+    "lazy": false,
+    "noInterop": false
   },
   "jsc": {
     "target": "es2022",
@@ -19,4 +21,4 @@
     "baseUrl": "./"
   },
   "minify": false
-} 
+}

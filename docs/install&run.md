@@ -46,7 +46,7 @@ bun start:dev
 Production mode:
 
 ```bash
-bun build
+bun run build:nest
 bun start:prod
 ```
 

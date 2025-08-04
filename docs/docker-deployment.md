@@ -43,13 +43,13 @@ You can then run the NestJS application locally:
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Generate Prisma client
-pnpm prisma:generate
+bun prisma:generate
 
 # Start the application in development mode
-pnpm start:dev
+bun start:dev
 ```
 
 ### Stopping the Development Environment

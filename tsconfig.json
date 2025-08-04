@@ -1,12 +1,15 @@
 {
+  "include": ["src/**/*"],
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ES2022",
+    "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2022",
+    "target": "ES2022",
+    "lib": ["ES2022"],
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -18,8 +21,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": false,
     "types": [
       "bun-types"
     ],
@@ -35,6 +40,7 @@
     "node_modules",
     "dist",
     "test",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "prisma/**/*"
   ]
 } 
