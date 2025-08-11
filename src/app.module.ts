@@ -1,12 +1,4 @@
 import { Module } from '@nestjs/common';
-import {
-  AcceptLanguageResolver,
-  CookieResolver,
-  HeaderResolver,
-  I18nModule,
-  QueryResolver,
-} from 'nestjs-i18n';
-import path from 'path';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { ConfigModule } from './config/config.module';
@@ -20,25 +12,12 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ConfigModule,
-    AuthModule.forRoot(),
-    I18nModule.forRoot({
-      fallbackLanguage: 'en',
-      loaderOptions: {
-        path: path.join(__dirname, '../i18n/'),
-        watch: true,
-      },
-      resolvers: [
-        new QueryResolver(['lang', 'l']),
-        new HeaderResolver(['x-custom-lang']),
-        new CookieResolver(['lang']),
-        AcceptLanguageResolver,
-      ],
-    }),
+    LoggerModule,
     PrismaModule,
     CommonModule,
+    AuthModule.forRoot(),
     UsersModule,
     StorageModule.register(),
-    LoggerModule,
     StripeModule,
     MailerModule,
   ],

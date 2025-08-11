@@ -1,5 +1,5 @@
-import type { PrismaService } from '@app/prisma/prisma.service';
-import { ConflictException, Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { PrismaService } from '@app/prisma/prisma.service';
+import { ConflictException, Injectable, Logger, NotFoundException, Inject } from '@nestjs/common';
 import { Role } from '@prisma/client';
 import * as bcrypt from 'bcryptjs';
 import type { CreateUserDto } from '../dto/create-user.dto';
@@ -8,7 +8,7 @@ import type { CreateUserDto } from '../dto/create-user.dto';
 export class UsersService {
   private readonly logger = new Logger(UsersService.name);
 
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(@Inject(PrismaService) private readonly prisma: PrismaService) {}
 
   findAll() {
     this.logger.debug('Finding all users');

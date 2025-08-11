@@ -1,6 +1,6 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, Inject } from '@nestjs/common';
 import Stripe from 'stripe';
-import type { ConfigService } from '../config/config.service';
+import { ConfigService } from '@app/config/config.service';
 
 export interface CreatePaymentIntentDto {
   amount: number;
@@ -20,7 +20,7 @@ export class StripeService {
   private stripe: Stripe;
   private readonly logger = new Logger(StripeService.name);
 
-  constructor(private readonly config: ConfigService) {}
+  constructor(@Inject(ConfigService) private readonly config: ConfigService) {}
 
   private getStripe(): Stripe {
     if (!this.stripe) {

@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
-import type { ConfigService as NestConfigService } from '@nestjs/config';
+import { Injectable, Inject } from '@nestjs/common';
+import { ConfigService as NestConfigService } from '@nestjs/config';
 import type { Config } from './interfaces/config.interface';
 
 @Injectable()
 export class ConfigService {
-  constructor(private readonly configService: NestConfigService) {}
+  constructor(@Inject(NestConfigService) private readonly configService: NestConfigService) {}
 
   get<T = any>(key: string): T {
     const value = this.configService.get<T>(key);

@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import * as COS from 'cos-nodejs-sdk-v5';
 import type { ReadStream } from 'fs';
 import * as path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import type { ConfigService } from '../../config/config.service';
+import { ConfigService } from '@app/config/config.service';
 import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class TencentCosStorageProvider implements StorageProvider {
   private readonly region: string;
   private readonly baseUrl: string;
 
-  constructor(private configService: ConfigService) {
+  constructor(@Inject(ConfigService) private configService: ConfigService) {
     const storageConfig = this.configService.getStorageConfig();
 
     this.cosClient = new COS.default({

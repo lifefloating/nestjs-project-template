@@ -7,11 +7,11 @@ import {
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import type { ReadStream } from 'fs';
 import * as path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import type { ConfigService } from '../../config/config.service';
+import { ConfigService } from '@app/config/config.service';
 import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class S3StorageProvider implements StorageProvider {
   private readonly bucket: string;
   private readonly baseUrl: string;
 
-  constructor(private readonly configService: ConfigService) {
+  constructor(@Inject(ConfigService) private readonly configService: ConfigService) {
     const storageConfig = this.configService.getStorageConfig();
 
     const s3Config: any = {

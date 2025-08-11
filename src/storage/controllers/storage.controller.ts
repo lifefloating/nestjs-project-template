@@ -8,18 +8,19 @@ import {
   Post,
   Query,
   Req,
+  Inject,
 } from '@nestjs/common';
 import { ApiBody, ApiConsumes, ApiOperation, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import type { FileUploadResultDto } from '../dto/file-upload.dto';
-import type { StorageService } from '../services/storage.service';
+import { StorageService } from '../services/storage.service';
 
 @ApiTags('storage')
 @Controller('storage')
 export class StorageController {
   private readonly logger = new Logger(StorageController.name);
 
-  constructor(private readonly storageService: StorageService) {}
+  constructor(@Inject(StorageService) private readonly storageService: StorageService) {}
 
   @Post('upload')
   @ApiOperation({ summary: 'Upload a single file' })

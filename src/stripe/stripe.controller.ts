@@ -1,15 +1,15 @@
 import type { RawBodyRequest } from '@nestjs/common';
-import { Body, Controller, Get, Headers, Param, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Param, Post, Req, Inject } from '@nestjs/common';
 import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import type { CreateCustomerDto } from './dto/create-customer.dto';
 import type { CreatePaymentIntentDto } from './dto/create-payment-intent.dto';
-import type { StripeService } from './stripe.service';
+import { StripeService } from './stripe.service';
 
 @ApiTags('stripe')
 @Controller('stripe')
 export class StripeController {
-  constructor(private readonly stripeService: StripeService) {}
+  constructor(@Inject(StripeService) private readonly stripeService: StripeService) {}
 
   @Get('test')
   @ApiOperation({ summary: 'Test Stripe integration' })

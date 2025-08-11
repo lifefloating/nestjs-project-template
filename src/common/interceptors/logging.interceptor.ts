@@ -2,15 +2,16 @@ import {
   type CallHandler,
   type ExecutionContext,
   Injectable,
+  Inject,
   type NestInterceptor,
 } from '@nestjs/common';
 import type { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import type { LoggerService } from '../../logger/logger.service';
+import { LoggerService } from '@app/logger/logger.service';
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {
-  constructor(private readonly loggerService: LoggerService) {}
+  constructor(@Inject(LoggerService) private readonly loggerService: LoggerService) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     const request = context.switchToHttp().getRequest();
