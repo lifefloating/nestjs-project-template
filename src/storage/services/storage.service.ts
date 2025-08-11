@@ -1,11 +1,11 @@
-import { Injectable, BadRequestException, Inject } from '@nestjs/common';
-import { ConfigService } from '../../config/config.service';
-import { StorageProvider, UploadedFileResult } from '../providers/storage.interface';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as util from 'util';
 import { pipeline } from 'stream';
+import * as util from 'util';
 import { v4 as uuidv4 } from 'uuid';
+import type { ConfigService } from '../../config/config.service';
+import type { StorageProvider, UploadedFileResult } from '../providers/storage.interface';
 
 const pipelineAsync = util.promisify(pipeline);
 
@@ -27,7 +27,7 @@ export class StorageService {
       this.storageProvider = this.storageProviders[providerType];
     } else {
       // 如果配置的提供者不可用，使用S3作为默认
-      this.storageProvider = this.storageProviders['s3'];
+      this.storageProvider = this.storageProviders.s3;
     }
 
     this.maxFileSize = storageConfig.maxFileSize;

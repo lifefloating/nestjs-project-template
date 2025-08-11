@@ -1,6 +1,6 @@
 [test]
 # Bun test configuration
-preload = ["./preload.ts"]
+preload = ["./src/preload.ts"]
 
 [install]
 # Install configuration

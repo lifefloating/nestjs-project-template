@@ -1,16 +1,20 @@
-import type { FastifyRequest, FastifyReply } from 'fastify';
-import { PrismaService } from '../prisma/prisma.service';
-import { ConfigService } from '../config/config.service';
-
+import {
+  BetterAuthError,
+  type BetterAuthOptions,
+  type BetterAuthPlugin,
+  betterAuth,
+} from 'better-auth';
+import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { createAuthMiddleware } from 'better-auth/api';
+import { toNodeHandler } from 'better-auth/node';
+import type { FastifyReply, FastifyRequest } from 'fastify';
+import type { ConfigService } from '../config/config.service';
+import type { PrismaService } from '../prisma/prisma.service';
 import {
   AUTH_JS_ACCOUNT_COLLECTION,
   AUTH_JS_SESSION_COLLECTION,
   AUTH_JS_USER_COLLECTION,
 } from './auth.constant';
-import { BetterAuthError, betterAuth, BetterAuthOptions, BetterAuthPlugin } from 'better-auth';
-import { prismaAdapter } from 'better-auth/adapters/prisma';
-import { toNodeHandler } from 'better-auth/node';
-import { createAuthMiddleware } from 'better-auth/api';
 
 export type AuthRequest = FastifyRequest & { originalUrl?: string; url?: string };
 export type AuthResponse = FastifyReply;

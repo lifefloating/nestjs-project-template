@@ -1,12 +1,12 @@
-import { DynamicModule, Module } from '@nestjs/common';
-import { StorageController } from './controllers/storage.controller';
-import { StorageService } from './services/storage.service';
-import { S3StorageProvider } from './providers/s3-storage.provider';
-import { AliOssStorageProvider } from './providers/alioss-storage.provider';
-import { TencentCosStorageProvider } from './providers/tencentcos-storage.provider';
-import { StorageProvider } from './providers/storage.interface';
+import { type DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
+import { StorageController } from './controllers/storage.controller';
+import { AliOssStorageProvider } from './providers/alioss-storage.provider';
+import { S3StorageProvider } from './providers/s3-storage.provider';
+import type { StorageProvider } from './providers/storage.interface';
+import { TencentCosStorageProvider } from './providers/tencentcos-storage.provider';
+import { StorageService } from './services/storage.service';
 
 @Module({
   imports: [ConfigModule],
@@ -29,11 +29,11 @@ export class StorageModule {
 
             // 根据配置注入其他提供商
             if (storageConfig.provider === 'alioss') {
-              providers['alioss'] = new AliOssStorageProvider(configService);
+              providers.alioss = new AliOssStorageProvider(configService);
             }
 
             if (storageConfig.provider === 'tencentoss') {
-              providers['tencentoss'] = new TencentCosStorageProvider(configService);
+              providers.tencentoss = new TencentCosStorageProvider(configService);
             }
 
             return providers;

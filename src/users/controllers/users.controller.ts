@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Body, Param, Logger } from '@nestjs/common';
-import { UsersService } from '../services/users.service';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
+import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import type { CreateUserDto } from '../dto/create-user.dto';
+import type { UsersService } from '../services/users.service';
 
 @ApiTags('users')
 @Controller('users')

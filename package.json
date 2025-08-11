@@ -7,13 +7,15 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build:nest": "nest build --builder swc",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "biome format --write .",
     "start": "bun run src/main.ts",
     "start:dev": "bun --watch run src/main.ts",
     "start:debug": "bun --inspect --watch run src/main.ts",
     "start:prod": "bun dist/main.js",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
-    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
     "prepare": "husky",
     "test": "bun test",
     "test:watch": "bun test --watch",
@@ -82,10 +84,9 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.1.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.23.0",
     "@nestjs/cli": "^11.0.5",
     "@nestjs/schematics": "^11.0.2",
     "@nestjs/testing": "^11.0.12",
@@ -99,17 +100,9 @@
     "@types/passport-local": "^1.0.38",
     "@types/supertest": "^6.0.3",
     "@types/uuid": "^10.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.28.0",
-    "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.3",
-    "globals": "^16.0.0",
     "husky": "^9.1.7",
-    "prettier": "^3.5.3",
     "prisma": "^6.5.0",
     "supertest": "^7.1.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0"
+    "typescript": "^5.8.2"
   }
 }

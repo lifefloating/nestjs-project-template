@@ -1,18 +1,18 @@
 import {
+  BadRequestException,
   Controller,
-  Post,
   Delete,
   Get,
-  Param,
-  Query,
-  BadRequestException,
   Logger,
+  Param,
+  Post,
+  Query,
   Req,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiConsumes, ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
-import { StorageService } from '../services/storage.service';
-import { FileUploadResultDto } from '../dto/file-upload.dto';
+import { ApiBody, ApiConsumes, ApiOperation, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
+import type { FileUploadResultDto } from '../dto/file-upload.dto';
+import type { StorageService } from '../services/storage.service';
 
 @ApiTags('storage')
 @Controller('storage')

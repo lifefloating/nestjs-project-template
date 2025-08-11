@@ -25,9 +25,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
-    "types": [
-      "bun-types"
-    ],
+    "types": ["bun-types"],
     "paths": {
       "@app/*": ["src/*"],
       "@config/*": ["src/config/*"],
@@ -36,11 +34,5 @@
       "@core/*": ["src/core/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "test",
-    "**/*.spec.ts",
-    "prisma/**/*"
-  ]
-} 
+  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts", "prisma/**/*"]
+}

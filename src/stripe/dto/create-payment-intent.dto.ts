@@ -1,5 +1,5 @@
-import { IsNotEmpty, IsNumber, IsString, IsOptional, Min, IsObject } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsNotEmpty, IsNumber, IsObject, IsOptional, IsString, Min } from 'class-validator';
 
 export class CreatePaymentIntentDto {
   @ApiProperty({

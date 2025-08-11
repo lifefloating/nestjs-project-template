@@ -1,0 +1,96 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**/*.ts", "**/*.js", "**/*.json"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "useOptionalChain": "off",
+        "noUselessConstructor": "warn",
+        "noUselessSwitchCase": "off",
+        "useLiteralKeys": "off",
+        "noStaticOnlyClass": "off"
+      },
+      "correctness": {
+        "noEmptyCharacterClassInRegex": "warn",
+        "noInnerDeclarations": "warn",
+        "noSwitchDeclarations": "warn",
+        "noUnsafeOptionalChaining": "warn",
+        "noVoidTypeReturn": "warn",
+        "useExhaustiveDependencies": "warn",
+        "useYield": "warn",
+        "noUnusedPrivateClassMembers": "off"
+      },
+      "security": {
+        "noBlankTarget": "warn"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
+      },
+      "style": {
+        "useArrayLiterals": "error",
+        "useAsConstAssertion": "error",
+        "noCommonJs": "warn",
+        "noNamespace": "warn",
+        "useConst": "warn",
+        "useImportType": "warn",
+        "useNodejsImportProtocol": "off"
+      },
+      "suspicious": {
+        "noAsyncPromiseExecutor": "warn",
+        "noAssignInExpressions": "warn",
+        "noControlCharactersInRegex": "warn",
+        "noDoubleEquals": "warn",
+        "noExplicitAny": "off",
+        "noFallthroughSwitchClause": "warn",
+        "noImplicitAnyLet": "warn",
+        "noRedeclare": "warn",
+        "noShadowRestrictedNames": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.test.ts", "**/*.spec.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off",
+            "noImplicitAnyLet": "off"
+          }
+        }
+      }
+    }
+  ]
+}

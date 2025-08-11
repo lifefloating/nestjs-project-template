@@ -1,10 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import * as nodemailer from 'nodemailer';
+import type { ConfigService } from '@nestjs/config';
 import * as fs from 'fs/promises';
-import * as path from 'path';
 import mjml from 'mjml';
-import { I18nService } from 'nestjs-i18n';
+import type { I18nService } from 'nestjs-i18n';
+import * as nodemailer from 'nodemailer';
+import * as path from 'path';
 
 @Injectable()
 export class MailerService {

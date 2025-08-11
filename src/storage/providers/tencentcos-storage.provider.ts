@@ -1,13 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '../../config/config.service';
-import { StorageProvider, FileUploadOptions, UploadedFileResult } from './storage.interface';
-import { ReadStream } from 'fs';
 import * as COS from 'cos-nodejs-sdk-v5';
-import { v4 as uuidv4 } from 'uuid';
+import type { ReadStream } from 'fs';
 import * as path from 'path';
-
-// Tencent Cloud COS ACL types
-type TencentACL = 'private' | 'public-read' | 'public-read-write';
+import { v4 as uuidv4 } from 'uuid';
+import type { ConfigService } from '../../config/config.service';
+import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
 export class TencentCosStorageProvider implements StorageProvider {
@@ -170,18 +167,5 @@ export class TencentCosStorageProvider implements StorageProvider {
     const day = String(date.getDate()).padStart(2, '0');
 
     return `${year}/${month}/${day}/${uuid}${ext}`;
-  }
-
-  // Map common ACL to Tencent Cloud ACL
-  private mapToTencentACL(acl: string): TencentACL {
-    switch (acl) {
-      case 'public-read':
-        return 'public-read';
-      case 'public-read-write':
-        return 'public-read-write';
-      case 'private':
-      default:
-        return 'private';
-    }
   }
 }

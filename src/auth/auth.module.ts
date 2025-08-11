@@ -1,12 +1,17 @@
-import { DynamicModule, MiddlewareConsumer, NestModule, Provider, Module } from '@nestjs/common';
-import { AuthInstance } from './auth.interface';
-
-import { AuthInstanceInjectKey } from './auth.constant';
-import { AuthController } from './auth.controller';
-import { AuthMiddleware } from './auth.middleware';
-import { AuthService } from './auth.service';
 import { ConfigModule } from '@app/config/config.module';
 import { PrismaModule } from '@app/prisma/prisma.module';
+import {
+  type DynamicModule,
+  type MiddlewareConsumer,
+  Module,
+  type NestModule,
+  type Provider,
+} from '@nestjs/common';
+import { AuthInstanceInjectKey } from './auth.constant';
+import { AuthController } from './auth.controller';
+import type { AuthInstance } from './auth.interface';
+import { AuthMiddleware } from './auth.middleware';
+import { AuthService } from './auth.service';
 
 @Module({})
 export class AuthModule implements NestModule {

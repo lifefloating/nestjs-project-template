@@ -3,7 +3,7 @@
  * This file is preloaded before running tests as configured in bunfig.toml
  */
 
-import { beforeAll, afterAll } from 'bun:test';
+import { afterAll, beforeAll } from 'bun:test';
 
 // Global test setup
 beforeAll(() => {

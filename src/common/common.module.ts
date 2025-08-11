@@ -1,9 +1,9 @@
-import { Module, Global } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { LoggerModule } from '../logger/logger.module';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { TransformInterceptor } from './interceptors/transform.interceptor';
-import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
-import { LoggerModule } from '../logger/logger.module';
 
 @Global()
 @Module({

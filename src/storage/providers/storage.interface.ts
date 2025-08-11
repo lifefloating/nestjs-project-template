@@ -1,4 +1,4 @@
-import { ReadStream } from 'fs';
+import type { ReadStream } from 'fs';
 
 export interface FileUploadOptions {
   contentType?: string;

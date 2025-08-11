@@ -1,18 +1,16 @@
-import type { BetterAuthOptions } from 'better-auth';
+import type { ConfigService } from '@app/config/config.service';
+import type { PrismaService } from '@app/prisma/prisma.service';
 import type { NestMiddleware, OnModuleInit } from '@nestjs/common';
-
-import { Injectable, Inject, Logger } from '@nestjs/common';
-
+import { Inject, Injectable, Logger } from '@nestjs/common';
+import type { BetterAuthOptions } from 'better-auth';
 import {
+  AUTH_ALLOWED_METHODS,
+  AUTH_BYPASS_PATHS,
   AuthInstanceInjectKey,
   OAuthProviderType,
-  AUTH_BYPASS_PATHS,
-  AUTH_ALLOWED_METHODS,
 } from './auth.constant';
 import { CreateAuth } from './auth.implement';
 import type { InjectAuthInstance } from './auth.interface';
-import { ConfigService } from '@app/config/config.service';
-import { PrismaService } from '@app/prisma/prisma.service';
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware, OnModuleInit {

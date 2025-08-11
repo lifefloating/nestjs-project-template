@@ -1,8 +1,8 @@
-import { Injectable, ConflictException, NotFoundException, Logger } from '@nestjs/common';
-import { PrismaService } from '@app/prisma/prisma.service';
-import { CreateUserDto } from '../dto/create-user.dto';
-import * as bcrypt from 'bcryptjs';
+import type { PrismaService } from '@app/prisma/prisma.service';
+import { ConflictException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { Role } from '@prisma/client';
+import * as bcrypt from 'bcryptjs';
+import type { CreateUserDto } from '../dto/create-user.dto';
 
 @Injectable()
 export class UsersService {

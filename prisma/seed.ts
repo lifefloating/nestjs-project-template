@@ -44,7 +44,8 @@ async function main() {
       },
       {
         title: 'Getting Started with NestJS',
-        content: 'NestJS is a progressive Node.js framework for building efficient and scalable server-side applications.',
+        content:
+          'NestJS is a progressive Node.js framework for building efficient and scalable server-side applications.',
         published: true,
       },
       {
@@ -65,4 +66,4 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
-  }); 
+  });

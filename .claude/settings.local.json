@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "Bash(bun remove:*)",
+      "Bash(rm:*)",
+      "Bash(bun add:*)",
+      "Bash(bun run:*)",
+      "Bash(biome check:*)",
+      "Bash(bunx biome check:*)",
+      "Bash(bun test:*)"
+    ],
+    "deny": []
+  }
+}

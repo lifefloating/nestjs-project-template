@@ -1,28 +1,25 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "config:base",
-      ":disableDependencyDashboard"
-    ],
-    "labels": ["dependencies"],
-    "schedule": ["every weekend"],
-    "lockFileMaintenance": {
-      "enabled": true,
-      "schedule": ["before 5am on monday"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":disableDependencyDashboard"],
+  "labels": ["dependencies"],
+  "schedule": ["every weekend"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 5am on monday"]
+  },
+  "packageRules": [
+    {
+      "groupName": "nestjs packages",
+      "groupSlug": "nestjs",
+      "matchPackageNames": ["/^@nestjs//"]
     },
-    "packageRules": [
-      {
-        "groupName": "nestjs packages",
-        "groupSlug": "nestjs",
-        "matchPackageNames": ["/^@nestjs//"]
-      },
-      {
-        "matchUpdateTypes": ["minor", "patch"],
-        "automerge": true
-      },
-      {
-        "matchPackageNames": ["stripe"],
-        "enabled": false
-      }
-    ]
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["stripe"],
+      "enabled": false
+    }
+  ]
 }
