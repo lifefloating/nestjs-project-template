@@ -1,12 +1,12 @@
-import type { ConfigService } from '@app/config/config.service';
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, Inject } from '@nestjs/common';
+import { ConfigService } from '@app/config/config.service';
 import pino from 'pino';
 
 @Injectable()
 export class LoggerService extends Logger {
   private readonly pinoInstance: any;
 
-  constructor(private readonly config: ConfigService) {
+  constructor(@Inject(ConfigService) private readonly config: ConfigService) {
     super();
 
     const datadog = this.config.getDatadogConfig();

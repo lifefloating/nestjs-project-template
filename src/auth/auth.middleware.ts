@@ -1,5 +1,5 @@
-import type { ConfigService } from '@app/config/config.service';
-import type { PrismaService } from '@app/prisma/prisma.service';
+import { ConfigService } from '@app/config/config.service';
+import { PrismaService } from '@app/prisma/prisma.service';
 import type { NestMiddleware, OnModuleInit } from '@nestjs/common';
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import type { BetterAuthOptions } from 'better-auth';
@@ -18,8 +18,8 @@ export class AuthMiddleware implements NestMiddleware, OnModuleInit {
   private authHandler: Awaited<ReturnType<typeof CreateAuth>>['handler'] | undefined;
 
   constructor(
-    private readonly configService: ConfigService,
-    private readonly prismaService: PrismaService,
+    @Inject(ConfigService) private readonly configService: ConfigService,
+    @Inject(PrismaService) private readonly prismaService: PrismaService,
     @Inject(AuthInstanceInjectKey)
     private readonly authInstance: InjectAuthInstance,
   ) {}
@@ -30,7 +30,7 @@ export class AuthMiddleware implements NestMiddleware, OnModuleInit {
 
   private async initializeAuthHandler() {
     try {
-      const oauth = await this.configService.getOAuthConfig();
+      const oauth = this.configService.getOAuthConfig();
       const providers = {} as NonNullable<BetterAuthOptions['socialProviders']>;
 
       // Get enabled providers
@@ -58,7 +58,7 @@ export class AuthMiddleware implements NestMiddleware, OnModuleInit {
         } as any; // Using any to bypass complex type intersection
       }
 
-      const { handler, auth } = await CreateAuth(providers, this.prismaService, this.configService);
+      const { handler, auth } = CreateAuth(providers, this.prismaService, this.configService);
       this.authHandler = handler;
       this.authInstance.set(auth);
     } catch (error) {

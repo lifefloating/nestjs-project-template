@@ -4,9 +4,10 @@ import {
   type ExceptionFilter,
   HttpException,
   HttpStatus,
+  Inject,
 } from '@nestjs/common';
 import type { FastifyReply } from 'fastify';
-import type { LoggerService } from '../../logger/logger.service';
+import { LoggerService } from '@app/logger/logger.service';
 
 interface ErrorResponse {
   statusCode: number;
@@ -18,7 +19,7 @@ interface ErrorResponse {
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
-  constructor(private readonly loggerService: LoggerService) {}
+  constructor(@Inject(LoggerService) private readonly loggerService: LoggerService) {}
 
   catch(exception: unknown, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
