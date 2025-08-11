@@ -1,9 +1,9 @@
-import { describe, it, expect, beforeEach, mock } from 'bun:test';
-import { UsersController } from './users.controller';
-import { UsersService } from '../services/users.service';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { NotFoundException, ConflictException } from '@nestjs/common';
+import { beforeEach, describe, expect, it, mock } from 'bun:test';
+import { ConflictException, NotFoundException } from '@nestjs/common';
 import { Role } from '@prisma/client';
+import type { CreateUserDto } from '../dto/create-user.dto';
+import type { UsersService } from '../services/users.service';
+import { UsersController } from './users.controller';
 
 describe('UsersController', () => {
   let controller: UsersController;

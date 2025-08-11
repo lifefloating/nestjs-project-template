@@ -1,5 +1,5 @@
 {
-    "email.required":"メールアドレスを入力してください",
-    "email.invalid":"正しいメールアドレスを入力してください",
-    "password.minLength":"パスワードは{minLength}文字以上でなければなりません"
+  "email.required": "メールアドレスを入力してください",
+  "email.invalid": "正しいメールアドレスを入力してください",
+  "password.minLength": "パスワードは{minLength}文字以上でなければなりません"
 }

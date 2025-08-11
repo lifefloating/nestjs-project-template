@@ -1,18 +1,18 @@
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '../../config/config.service';
-import { StorageProvider, FileUploadOptions, UploadedFileResult } from './storage.interface';
-import { ReadStream } from 'fs';
 import {
-  S3Client,
-  PutObjectCommand,
   DeleteObjectCommand,
   GetObjectCommand,
-  ObjectCannedACL,
+  type ObjectCannedACL,
+  PutObjectCommand,
+  S3Client,
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { v4 as uuidv4 } from 'uuid';
+import { Injectable } from '@nestjs/common';
+import type { ReadStream } from 'fs';
 import * as path from 'path';
+import { v4 as uuidv4 } from 'uuid';
+import type { ConfigService } from '../../config/config.service';
+import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
 export class S3StorageProvider implements StorageProvider {

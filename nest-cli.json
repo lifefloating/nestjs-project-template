@@ -12,4 +12,4 @@
       { "include": "**/*.hbs", "watchAssets": true }
     ]
   }
-} 
+}

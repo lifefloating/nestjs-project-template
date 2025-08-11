@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '../../config/config.service';
-import { StorageProvider, FileUploadOptions, UploadedFileResult } from './storage.interface';
-import { ReadStream } from 'fs';
 import OSS from 'ali-oss';
-import { v4 as uuidv4 } from 'uuid';
+import type { ReadStream } from 'fs';
 import * as path from 'path';
+import { v4 as uuidv4 } from 'uuid';
+import type { ConfigService } from '../../config/config.service';
+import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
 export class AliOssStorageProvider implements StorageProvider {

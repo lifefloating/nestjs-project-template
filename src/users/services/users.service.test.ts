@@ -1,9 +1,9 @@
-import { describe, it, expect, beforeEach, mock } from 'bun:test';
-import { UsersService } from './users.service';
-import { PrismaService } from '@app/prisma/prisma.service';
+import { beforeEach, describe, expect, it, mock } from 'bun:test';
+import type { PrismaService } from '@app/prisma/prisma.service';
 import { ConflictException, NotFoundException } from '@nestjs/common';
-import { CreateUserDto } from '../dto/create-user.dto';
 import { Role } from '@prisma/client';
+import type { CreateUserDto } from '../dto/create-user.dto';
+import { UsersService } from './users.service';
 
 // Mock bcrypt
 void mock.module('bcryptjs', () => ({

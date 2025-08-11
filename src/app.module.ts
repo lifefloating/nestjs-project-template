@@ -1,21 +1,21 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from './config/config.module';
-import { PrismaModule } from './prisma/prisma.module';
-import { UsersModule } from './users/users.module';
 import {
+  AcceptLanguageResolver,
   CookieResolver,
   HeaderResolver,
   I18nModule,
   QueryResolver,
-  AcceptLanguageResolver,
 } from 'nestjs-i18n';
 import path from 'path';
-import { CommonModule } from './common/common.module';
-import { StorageModule } from './storage/storage.module';
-import { LoggerModule } from './logger/logger.module';
-import { StripeModule } from './stripe/stripe.module';
 import { AuthModule } from './auth/auth.module';
+import { CommonModule } from './common/common.module';
+import { ConfigModule } from './config/config.module';
+import { LoggerModule } from './logger/logger.module';
 import { MailerModule } from './mailer/mailer.module';
+import { PrismaModule } from './prisma/prisma.module';
+import { StorageModule } from './storage/storage.module';
+import { StripeModule } from './stripe/stripe.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [

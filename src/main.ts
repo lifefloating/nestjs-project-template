@@ -1,18 +1,20 @@
 import * as dotenv from 'dotenv';
+
 dotenv.config();
-import { NestFactory } from '@nestjs/core';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { VersioningType, Logger } from '@nestjs/common';
-import { ConfigService } from './config/config.service';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { AppModule } from './app.module';
+
 import compression from '@fastify/compress';
-import helmet from '@fastify/helmet';
 import fastifyCors from '@fastify/cors';
+import helmet from '@fastify/helmet';
 import fastifyMultipart from '@fastify/multipart';
-import { I18nValidationExceptionFilter, I18nValidationPipe } from 'nestjs-i18n';
-import { FastifyInstance } from 'fastify';
+import { Logger, VersioningType } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { FastifyAdapter, type NestFastifyApplication } from '@nestjs/platform-fastify';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import type { FastifyInstance } from 'fastify';
 import * as yaml from 'js-yaml';
+import { I18nValidationExceptionFilter, I18nValidationPipe } from 'nestjs-i18n';
+import { AppModule } from './app.module';
+import { ConfigService } from './config/config.service';
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');

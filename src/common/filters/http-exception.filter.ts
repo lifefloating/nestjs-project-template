@@ -1,6 +1,12 @@
-import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from '@nestjs/common';
+import {
+  type ArgumentsHost,
+  Catch,
+  type ExceptionFilter,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import type { FastifyReply } from 'fastify';
-import { LoggerService } from '../../logger/logger.service';
+import type { LoggerService } from '../../logger/logger.service';
 
 interface ErrorResponse {
   statusCode: number;

@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
+import { ConfigService } from './config.service';
 import defaultConfig from './envs/default';
 import developmentConfig from './envs/development';
 import productionConfig from './envs/production';
-import { ConfigService } from './config.service';
 
 // Create different schemas based on environment
 const createSchemaForEnv = (isProd: boolean) => {
