@@ -52,17 +52,23 @@ bun start:prod
 
 ## Code Quality
 
-### Linting code:
+### Checking and fixing code:
 
 ```bash
-# Check for ESLint errors
+# Check code quality and formatting
+bun check
+
+# Fix code quality and formatting issues automatically
+bun check:fix
+
+# Only check linting rules
 bun lint
 
-# Fix ESLint errors automatically
+# Fix linting issues automatically
 bun lint:fix
 ```
 
-> **Note:** ESLint configuration is inspired by [brocoders/nestjs-boilerplate](https://github.com/brocoders/nestjs-boilerplate)
+> **Note:** This project uses [Biome](https://biomejs.dev/) for code formatting and linting
 
 ### Formatting code:
 

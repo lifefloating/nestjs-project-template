@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/nestjs/nest" target="_blank"><img src="https://img.shields.io/github/license/nestjs/nest.svg" alt="Package License" /></a>
-  <a href="https://github.com/lifefloating/nestjs-project-template/tree/node-main" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%2020.0.0%20(node--main%20branch)-green.svg" alt="Node Version (node-main branch)" /></a>
+  <a href="https://github.com/lifefloating/nestjs-project-template/tree/node-main" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D%2020.0.0%20-green.svg" alt="Node Version" /></a>
   <a href="https://bun.sh/" target="_blank"><img src="https://img.shields.io/badge/bun-%3E%3D%201.0.0-FFC0CB?style=flat&logo=bun&logoColor=white" alt="Bun Runtime" /></a>
   <a href="https://www.mongodb.com/" target="_blank"><img src="https://img.shields.io/badge/database-MongoDB-green.svg" alt="Database" /></a>
 </p>
