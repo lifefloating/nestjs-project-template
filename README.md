@@ -52,7 +52,7 @@
 - **Validation**: [class-validator](https://github.com/typestack/class-validator) with DTOs
 - **Logging**: [Pino](https://getpino.io/) for structured logging
 - ~~**Testing**: [Jest](https://jestjs.io/)~~ → **Testing**: Built-in Bun test runner
-- **Linting**: [ESLint](https://eslint.org/) with TypeScript rules (inspired by [brocoders/nestjs-boilerplate](https://github.com/brocoders/nestjs-boilerplate))
+- **Linting**: [Biome](https://biomejs.dev/) for fast linting and formatting
 - **Storage**: Multi-cloud storage support ([Alibaba Cloud OSS](https://www.alibabacloud.com/product/object-storage-service), [Tencent Cloud COS](https://www.tencentcloud.com/products/cos), [Amazon S3](https://aws.amazon.com/s3/))
 
 ## Features
