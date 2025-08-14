@@ -19,7 +19,7 @@ bun install
 3. Set up environment variables:
 
 ```bash
-cp .env.sample .env
+cp .env.example .env
 # Edit .env with your configuration
 ```
 
@@ -33,6 +33,25 @@ bun prisma:generate
 
 ```bash
 bun db:seed
+```
+
+## Additional Scripts
+
+### Database Management
+
+```bash
+# Open Prisma Studio
+bun prisma:studio
+
+# Deploy database migrations
+bun prisma:migrate
+```
+
+### OpenAPI Documentation
+
+```bash
+# Export OpenAPI spec (requires running server)
+bun openapi:export
 ```
 
 ## Running the Application

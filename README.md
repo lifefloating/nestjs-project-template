@@ -32,6 +32,8 @@
 ## Documentation
 
 - [Installation and Running Guide](./docs/install&run.md)
+- [Project Architecture](./docs/architecture.md) | [Chinese](./docs/architecture-zh.md)
+- [Docker Deployment Guide](./docs/docker-deployment.md)
 - [Cloud Storage Integration Guide (Chinese)](./docs/storage-guide.md) | [English](./docs/storage-guide-en.md)
 - [OAuth Authentication Guide (Chinese)](./docs/oauth-guide.md) | [English](./docs/oauth-guide-en.md)
 - [Mailer Module Guide (Chinese)](./docs/mailer.md) |  [English](./docs/mailer-en.md)
@@ -47,7 +49,7 @@
 - **Database**: [MongoDB](https://www.mongodb.com/) with [Prisma ORM](https://www.prisma.io/)
 - ~~**Compiler**: [SWC](https://swc.rs/) for TypeScript~~ (Built into Bun)
 - ~~**Package Manager**: [pnpm](https://pnpm.io/)~~ → **Package Manager**: Built-in Bun package manager
-- **Authentication**: JWT with [Passport](https://www.passportjs.org/)
+- **Authentication**: [Better Auth](https://github.com/better-auth/better-auth) with OAuth support
 - **Documentation**: [Swagger/OpenAPI](https://swagger.io/)
 - **Validation**: [class-validator](https://github.com/typestack/class-validator) with DTOs
 - **Logging**: [Pino](https://getpino.io/) for structured logging
@@ -64,10 +66,10 @@
 - **Caching**: [Redis](https://redis.io/) integration with [@nestjs/cache-manager](https://docs.nestjs.com/techniques/caching) and [ioredis](https://github.com/redis/ioredis)
 - **Logging**: Structured logging with [Pino](https://getpino.io/) and [pino-datadog-transport](https://github.com/wdalmut/pino-datadog)
 - **Documentation**: API documentation with Swagger ([@nestjs/swagger](https://docs.nestjs.com/openapi/introduction))
-- **Authentication**: 
-  - Email sign-in/sign-up with [JWT](https://jwt.io/) and [Passport](https://www.passportjs.org/)
-  - Social authentication with multiple providers (Google, GitHub, Facebook, Twitter, Microsoft, LinkedIn, GitLab, Discord, Apple, Stack)
-  - [BetterAuth](https://github.com/betterstack-community/better-auth) integration for enhanced security
+- **Authentication**:
+  - Email sign-in/sign-up with [Better Auth](https://github.com/better-auth/better-auth)
+  - Social authentication with multiple providers (Google, GitHub, Facebook, Twitter, Microsoft, LinkedIn, GitLab, Discord, Apple, etc.)
+  - Enhanced security with session management and CSRF protection
 - **Authorization**: Role-based access control with Admin and User base roles
 - **Storage**: Unified cloud storage interface with multiple provider support ([AWS S3](https://aws.amazon.com/s3/), [Alibaba OSS](https://www.alibabacloud.com/product/object-storage-service), [Tencent COS](https://www.tencentcloud.com/products/cos))
 - **Email**: Templated email sending with [Nodemailer](https://nodemailer.com/) and [MJML](https://mjml.io/)

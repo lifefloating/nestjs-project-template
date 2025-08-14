@@ -146,8 +146,8 @@ export default {
 
 ## API 端点
 
-- **获取可用提供商**: `GET /better-auth/providers`
-- **获取会话信息**: `GET /better-auth/session`
+- **获取可用提供商**: `GET /api/v1/better-auth/providers`
+- **获取会话信息**: `GET /api/v1/better-auth/session`
 
 ## 安全注意事项
 

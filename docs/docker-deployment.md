@@ -30,14 +30,16 @@ docker compose -f docker-compose.dev.yml up -d
 docker ps
 
 # View MongoDB logs
-docker compose -f docker-compose.dev.yml logs -f
+docker compose -f docker-compose.dev.yml logs -f mongodb
 ```
 
 With MongoDB running in Docker, update your `.env` file to connect to it:
 
 ```
-DATABASE_URL=mongodb://localhost:27017/nestjs_practice
+DATABASE_URL=mongodb://localhost:27017/nestjs_practice?replicaSet=rs0
 ```
+
+> **Note**: The development MongoDB is configured with replica set `rs0` for better compatibility with Prisma.
 
 You can then run the NestJS application locally:
 
@@ -129,7 +131,10 @@ docker logs -f mongodb
 # Access the application container shell
 docker exec -it nestjs-app sh
 
-# Access the MongoDB shell
+# Access the MongoDB shell (development)
+docker exec -it mongodb-dev mongosh
+
+# Access the MongoDB shell (production)
 docker exec -it mongodb mongosh
 ```
 
