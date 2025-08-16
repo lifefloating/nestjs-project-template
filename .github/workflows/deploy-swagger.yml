@@ -61,7 +61,7 @@ jobs:
       STRIPE_API_VERSION: ${{ vars.STRIPE_API_VERSION || '2025-02-24.acacia' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
