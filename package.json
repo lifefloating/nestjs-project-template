@@ -21,10 +21,17 @@
     "test:watch": "bun test --watch",
     "test:cov": "bun test --coverage",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate deploy",
+    "prisma:migrate:dev": "prisma db push --accept-data-loss",
+    "prisma:migrate:deploy": "prisma db push",
+    "prisma:migrate:reset": "prisma migrate reset",
     "prisma:studio": "prisma studio",
     "db:seed": "bun prisma/seed.ts",
+    "db:reset": "bun run prisma:migrate:reset && bun run db:seed",
+    "db:setup": "bun run prisma:generate && bun run prisma:migrate:deploy && bun run db:seed",
     "openapi:export": "curl -s http://localhost:7009/openapi.yaml > openapi/openapi.yaml && echo 'OpenAPI documentation exported from running server to openapi/ directory'"
+  },
+  "prisma": {
+    "seed": "bun prisma/seed.ts"
   },
   "keywords": [],
   "author": {
