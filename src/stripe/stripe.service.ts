@@ -1,6 +1,6 @@
-import { Injectable, Logger, Inject } from '@nestjs/common';
-import Stripe from 'stripe';
 import { ConfigService } from '@app/config/config.service';
+import { Inject, Injectable, Logger } from '@nestjs/common';
+import Stripe from 'stripe';
 
 export interface CreatePaymentIntentDto {
   amount: number;

@@ -1,3 +1,4 @@
+import { ConfigService } from '@app/config/config.service';
 import {
   DeleteObjectCommand,
   GetObjectCommand,
@@ -7,11 +8,10 @@ import {
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { Injectable, Inject } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import type { ReadStream } from 'fs';
 import * as path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { ConfigService } from '@app/config/config.service';
 import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
