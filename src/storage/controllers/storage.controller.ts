@@ -3,12 +3,12 @@ import {
   Controller,
   Delete,
   Get,
+  Inject,
   Logger,
   Param,
   Post,
   Query,
   Req,
-  Inject,
 } from '@nestjs/common';
 import { ApiBody, ApiConsumes, ApiOperation, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';

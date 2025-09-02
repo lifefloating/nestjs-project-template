@@ -1,10 +1,10 @@
+import { ConfigService } from '@app/config/config.service';
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 import { pipeline } from 'stream';
 import * as util from 'util';
 import { v4 as uuidv4 } from 'uuid';
-import { ConfigService } from '@app/config/config.service';
 import type { StorageProvider, UploadedFileResult } from '../providers/storage.interface';
 
 const pipelineAsync = util.promisify(pipeline);

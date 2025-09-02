@@ -1,5 +1,5 @@
-import { Injectable, Logger, Inject } from '@nestjs/common';
 import { ConfigService } from '@app/config/config.service';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import pino from 'pino';
 
 @Injectable()

@@ -1,3 +1,4 @@
+import { LoggerService } from '@app/logger/logger.service';
 import {
   type ArgumentsHost,
   Catch,
@@ -7,7 +8,6 @@ import {
   Inject,
 } from '@nestjs/common';
 import type { FastifyReply } from 'fastify';
-import { LoggerService } from '@app/logger/logger.service';
 
 interface ErrorResponse {
   statusCode: number;

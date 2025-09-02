@@ -1,12 +1,12 @@
+import { ConfigService } from '@app/config/config.service';
 import {
+  Inject,
   Injectable,
   Logger,
   type OnModuleDestroy,
   type OnModuleInit,
-  Inject,
 } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { ConfigService } from '@app/config/config.service';
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {

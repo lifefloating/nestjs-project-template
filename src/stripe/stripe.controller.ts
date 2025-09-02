@@ -1,5 +1,5 @@
 import type { RawBodyRequest } from '@nestjs/common';
-import { Body, Controller, Get, Headers, Param, Post, Req, Inject } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Inject, Param, Post, Req } from '@nestjs/common';
 import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import type { CreateCustomerDto } from './dto/create-customer.dto';

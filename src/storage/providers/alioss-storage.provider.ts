@@ -1,9 +1,9 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { ConfigService } from '@app/config/config.service';
+import { Inject, Injectable } from '@nestjs/common';
 import OSS from 'ali-oss';
 import type { ReadStream } from 'fs';
 import * as path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { ConfigService } from '@app/config/config.service';
 import type { FileUploadOptions, StorageProvider, UploadedFileResult } from './storage.interface';
 
 @Injectable()
