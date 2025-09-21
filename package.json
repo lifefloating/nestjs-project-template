@@ -106,7 +106,7 @@
     "@types/passport-jwt": "^4.0.1",
     "@types/passport-local": "^1.0.38",
     "@types/supertest": "^6.0.3",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "^11.0.0",
     "husky": "^9.1.7",
     "prisma": "^6.5.0",
     "supertest": "^7.1.0",
