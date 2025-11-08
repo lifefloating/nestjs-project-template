@@ -75,7 +75,7 @@
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "mjml": "^4.15.3",
-    "mongodb": "^6.15.0",
+    "mongodb": "^7.0.0",
     "nestjs-i18n": "^10.5.1",
     "nodemailer": "^7.0.0",
     "passport": "^0.7.0",
