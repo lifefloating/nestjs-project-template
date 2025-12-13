@@ -102,7 +102,7 @@
     "@types/ali-oss": "^6.16.11",
     "@types/bun": "^1.1.15",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.0.0",
+    "@types/node": "^25.0.0",
     "@types/passport-jwt": "^4.0.1",
     "@types/passport-local": "^1.0.38",
     "@types/supertest": "^6.0.3",
