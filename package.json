@@ -65,7 +65,7 @@
     "bcryptjs": "^3.0.2",
     "better-auth": "^1.2.4",
     "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.1",
+    "class-validator": "^0.15.0",
     "cos-nodejs-sdk-v5": "^2.14.7",
     "dayjs": "^1.11.13",
     "dotenv": "^17.0.0",
