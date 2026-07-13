@@ -51,7 +51,7 @@
     "@fastify/cors": "^11.0.1",
     "@fastify/helmet": "^13.0.1",
     "@fastify/multipart": "^10.0.0",
-    "@fastify/static": "^9.0.0",
+    "@fastify/static": "^10.0.0",
     "@nestjs/common": "^11.0.12",
     "@nestjs/config": "^4.0.1",
     "@nestjs/core": "^11.0.12",
